@@ -53,7 +53,7 @@ ACR_CREDENTIALS=$(az acr credential show -n fabmedical558288)
 ACR_USERNAME=$(jq -r -n '$input.username' --argjson input "$ACR_CREDENTIALS")
 ACR_PASSWORD=$(jq -r -n '$input.passwords[0].value' --argjson input "$ACR_CREDENTIALS")
 
-GITHUB_TOKEN=$MCW_GITHUB_TOKEN
+GITHUB_TOKEN=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
 cd ~/Fabmedical
 echo $GITHUB_TOKEN | gh auth login --with-token
 gh secret set ACR_USERNAME -b "$ACR_USERNAME"
